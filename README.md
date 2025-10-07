@@ -16,8 +16,8 @@ Repositorio de **infraestructura** para levantar el proyecto completo **Property
 ### Opción 1 — Clonar con submódulos directamente
 
 ```bash
-git clone --recurse-submodules https://github.com/tu-usuario/propertyhub-infra.git
-cd propertyhub-infra
+git clone --recurse-submodules https://github.com/CarlosArguello/realty-hub-infra.git
+cd realty-hub-infra
 ```
 
 ### Opción 2 — Si ya clonaste sin submódulos

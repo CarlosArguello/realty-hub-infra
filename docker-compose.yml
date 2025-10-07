@@ -1,0 +1,39 @@
+services:
+  web:
+    build:
+      context: "./web"
+      dockerfile: Dockerfile
+      args:
+        VITE_API_URL: "http://localhost:5008/api"
+    ports: ["3000:3000"]
+    depends_on:
+      - api
+
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    environment:
+      ASPNETCORE_URLS: http://0.0.0.0:5008
+      ASPNETCORE_ENVIRONMENT: Production
+
+      Mongo__Database: "realtyHub"
+      AllowedCorsOrigins__0: "http://localhost:3000"
+      ConnectionStrings__Mongo: "mongodb://mongo:27017/realtyHub"
+    depends_on:
+      - mongo
+    ports:
+      - "5008:5008"
+
+
+  mongo:
+    image: mongo:7
+    # ports: ["27018:27017"] // descomentar si se quiere probar en local la db de mongo port:27018
+
+    volumes:
+      - mongo_data:/data/db
+    # environment:
+      # MONGO_INITDB_DATABASE: realestate
+
+volumes:
+  mongo_data:

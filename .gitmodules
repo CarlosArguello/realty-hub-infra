@@ -1,8 +1,9 @@
 [submodule "api"]
 	path = api
-	url = https://github.com/tu-org/tu-api.git
+	url = https://github.com/CarlosArguello/realty-hub-api.git
 	branch = main
 [submodule "web"]
 	path = web
-	url = https://github.com/tu-org/tu-app.git
+	url = https://github.com/CarlosArguello/realty-hub-app.git
 	branch = main
+
